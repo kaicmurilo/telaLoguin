@@ -25,24 +25,25 @@ class Aplication:
         janela.title("Loguin")
         janela.iconbitmap("icon.ico")
         janela.resizable(False, False)
+        # adiciona transparencia a tela
+        janela.attributes("-alpha", 0.9)
 
     def telaLogin(self):
         # Imagem tela
         img = PhotoImage(file="logo.png").subsample(
             4
         )  # redimensiona a imagem pela metade
-        label_img = ctk.CTkLabel(master=janela, text=None, image=img)
-        label_img.pack(
+        label_img = ctk.CTkLabel(master=janela, text=None, image=img).pack(
             side="left", padx=(20, 10)
         )  # adiciona 10 pixels de espaçamento à direita da imagem
 
         # Texto tela
-        label_tt = ctk.CTkLabel(
+        title_label = ctk.CTkLabel(
             master=janela,
             text="Entre na sua conta  \n e tenha acesso a plataforma",
             font=("Roboto", 20),
-            text_color="#00B0F0",
-        ).place(x=10, y=10)
+            text_color="orange",
+        ).place(x=15, y=10)
 
         # frame
         login_frame = ctk.CTkFrame(master=janela, width=350, height=396)
@@ -61,7 +62,10 @@ class Aplication:
             placeholder_text="Digite seu usuário",
             width=300,
             font=("Roboto", 15),
+            bg_color="white",
+            fg_color="black",
         ).place(x=25, y=105)
+
         username_label = ctk.CTkLabel(
             master=login_frame,
             text="*campo obrigátorio",
@@ -87,13 +91,29 @@ class Aplication:
             master=login_frame, text="Lembrar de mim", font=("Roboto", 10)
         ).place(x=25, y=245)
 
-        button = ctk.CTkButton(
+        loginButton = ctk.CTkButton(
             master=login_frame,
             text="Entrar",
             command=self.button_function,
             font=("Roboto", 15),
             width=300,
+            fg_color="orange",
         ).place(x=25, y=285)
+
+        cadastrar_span = ctk.CTkLabel(
+            master=login_frame,
+            text="Se não tem conta, \n cadastre-se!",
+            font=("Roboto", 15),
+        ).place(x=25, y=325)
+        cadastrarButton = ctk.CTkButton(
+            master=login_frame,
+            text="Cadastre-se",
+            width=150,
+            command=self.button_function,
+            font=("Roboto", 15),
+            fg_color="green",
+            hover_color="#00B0F0",
+        ).place(x=175, y=325)
 
 
 Aplication()
