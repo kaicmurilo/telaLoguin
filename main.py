@@ -22,7 +22,7 @@ class Aplication:
 
     def tela(self):
         janela.geometry("700x400")
-        janela.title("Loguin")
+        janela.title("LOGIN")
         janela.iconbitmap("icon.ico")
         janela.resizable(False, False)
         # adiciona transparencia a tela
@@ -40,7 +40,7 @@ class Aplication:
         # Texto tela
         title_label = ctk.CTkLabel(
             master=janela,
-            text="Entre na sua conta  \n e tenha acesso a plataforma",
+            text="Entre na sua conta  \n e tenha acesso à plataforma",
             font=("Roboto", 20),
             text_color="orange",
         ).place(x=15, y=10)
@@ -49,10 +49,10 @@ class Aplication:
         login_frame = ctk.CTkFrame(master=janela, width=350, height=396)
         login_frame.pack(side=RIGHT)
 
-        # wi0dget dentro da tela login
+        # wi0dget dentro da tela LOGIN
         label = ctk.CTkLabel(
             master=login_frame,
-            text="Loguin",
+            text="LOGIN",
             font=("Roboto", 20),
         )
         label.place(x=25, y=5)
@@ -62,8 +62,6 @@ class Aplication:
             placeholder_text="Digite seu usuário",
             width=300,
             font=("Roboto", 15),
-            bg_color="white",
-            fg_color="black",
         ).place(x=25, y=105)
 
         username_label = ctk.CTkLabel(
